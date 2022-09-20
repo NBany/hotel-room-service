@@ -1,0 +1,84 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="td" />
+            <item index="7" class="java.lang.String" itemvalue="th" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyArgumentListInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyChainedComparisonsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoreConstantInTheMiddle" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyGlobalUndefinedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="18">
+            <item index="0" class="java.lang.String" itemvalue="MANIFEST" />
+            <item index="1" class="java.lang.String" itemvalue="celerybeat-schedule" />
+            <item index="2" class="java.lang.String" itemvalue="celerybeat.pid" />
+            <item index="3" class="java.lang.String" itemvalue="local_settings.py" />
+            <item index="4" class="java.lang.String" itemvalue="db.sqlite3-journal" />
+            <item index="5" class="java.lang.String" itemvalue="com_crashlytics_export_strings.xml" />
+            <item index="6" class="java.lang.String" itemvalue="db.sqlite3" />
+            <item index="7" class="java.lang.String" itemvalue="dmypy.json" />
+            <item index="8" class="java.lang.String" itemvalue="pip-log.txt" />
+            <item index="9" class="java.lang.String" itemvalue="coverage.xml" />
+            <item index="10" class="java.lang.String" itemvalue="fabric.properties" />
+            <item index="11" class="java.lang.String" itemvalue="atlassian-ide-plugin.xml" />
+            <item index="12" class="java.lang.String" itemvalue="crashlytics-build.properties" />
+            <item index="13" class="java.lang.String" itemvalue="crashlytics.properties" />
+            <item index="14" class="java.lang.String" itemvalue="pip-delete-this-directory.txt" />
+            <item index="15" class="java.lang.String" itemvalue="nosetests.xml" />
+            <item index="16" class="java.lang.String" itemvalue="ipython_config.py" />
+            <item index="17" class="java.lang.String" itemvalue="django" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E111" />
+          <option value="E117" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="list" />
+          <option value="max" />
+          <option value="min" />
+          <option value="input" />
+          <option value="all" />
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="set.keys" />
+          <option value="set.*" />
+          <option value="property.setter" />
+          <option value="project.movie_appy.models.Person.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
