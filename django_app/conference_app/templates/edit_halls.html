@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block edit_hall %}
+    <table class="table table-striped">
+        <h3> Add new conference hall:</h3><br>
+        <form id="submit_area" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Name:</td><td><input type="number" name="name" value="{{ hall.name }}"</td>
+            </tr>
+            <tr>
+                <td>Capacity:</td><td><input type="number" name="capacity" value="{{ hall.capacity }}"</td>
+
+            </tr>
+            <tr>
+                <td>Projector:</td><td><input type="checkbox" name="projector" value="{{ hall.projector }}"</td>
+
+            </tr>
+                <tr><td style="background-color: gainsboro"><input type="submit" value="Submit"</td><td style="background-color: gainsboro"</td></tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+{% endblock %}

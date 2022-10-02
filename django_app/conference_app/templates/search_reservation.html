@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block search_hall %}
+    <table class="table table-striped">
+        <h2>Find reservation</h2><br><br>
+        <form id="submit_area" method="POST"
+              {% csrf_token %}
+              <tr>
+                  <td>Filter date:</td><td><input type="date" name="date"</td>
+              </tr>
+              <tr>
+                  <td>Hall:</td>
+                  <td>
+                    <select name="hall_id">
+                        <option value="">Select...</option>
+                        {% for hall in halls %}
+                        <option value="{{ hall.id }}">{{ hall }}</option>
+                        {% endfor %}
+                    </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Keyword:</td><td><input type="text" name="word" value=""></td>
+              </tr>
+                    <tr><td style="background-color: gainsboro"><input type="submit" value="Submit"></td><td style="background-color: gainsboro"></td></tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+{% endblock %}

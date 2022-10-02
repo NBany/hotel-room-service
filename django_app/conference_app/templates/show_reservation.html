@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+{% block show_reservations %}
+    <h5 style="color: #ba2121">{% if message %}{{ message }}{% endif %}</h5>
+    <form id="submit_area" method="POST">
+        {% csrf_token %}
+    <label>Sort by data:
+    <button type="submit" name="sort" value="2">-</button>
+    <button type="submit" name="sort" value="1">+</button>
+    <button type="submit" name="sort" value="0">by id</button><br>
+    </label>
+    </form>
+    <h4>Our reservations:</h4>
+    <table class="table table-striped">
+        <thead>
+            <th></th>
+            <th>Date</th>
+            <th>Hall</th>
+            <th>Description</th>
+
+        </thead>
+        {% for r in reservations %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.date|date:"M d, Y }}<br>
+            <small class="text-muted"><a href="/res/modify/{{ r.id }}">edit</a></small>
+            <small class="text-muted"><a href="/res/delete/{{ r.id }}">delete</a></small>
+
+            </td>
+            <td>{{ r.hall }}</td>
+            <td>{{ r.description }}</td>
+
+        </tr>
+        {% endfor %}
+    </table><br>
+    <h5><a href="{% url 'new_reservation' %}">Add new reservation</a></h5>
+
+{% endblock %}

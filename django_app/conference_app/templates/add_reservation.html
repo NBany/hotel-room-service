@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block add_hall %}
+    <table class="table table-striped">
+        <h3> Add a new reservation for {{ hall }}:</h3><br>
+        <form id="submit_area" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Date (yyyy-mm-dd):</td><td>{{ form.date }}</td>
+            </tr>
+            <tr>
+                <td>Description:</td><td>{{ form.description }}</td>
+
+            </tr>
+            <tr><td style="background-color: gainsboro"><input type="submit" value="Submit"></td><td style="background-color: gainsboro"></td>
+            </tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+    <table class="table table-bordered border-primary">
+        {% for i in hall_res %}
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

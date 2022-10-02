@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block search_hall %}
+    <table class="table table-striped">
+        <h2>Find hall</h2><br><br>
+        <h5>Search conditions:</h5>
+        <form id="submit_area" method="POST"
+              {% csrf_token %}
+              <tr>
+                  <td>Name:</td><td><input type="text" name="name"</td>
+              </tr>
+              <tr>
+                  <td>Minimum capacity:</td><td><input type="number" name="capacity"</td>
+              </tr>
+              <tr>
+                  <td>Projector:</td><td><input type="checkbox" name="projector"></td>
+              </tr><td style="background-color: gainsboro"><input type="submit" value="Submit"></td><td style="background-color: gainsboro"></td></tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+{% endblock %}

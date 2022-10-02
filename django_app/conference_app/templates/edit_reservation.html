@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% block edit_reservation %}
+    <table class="table table-striped">
+        <h3> Edit reservation:</h3><br>
+        <form id="submit_area" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Hall:</td>
+                <td>
+                    <select name="hall">
+                        <option value="{{ res.get_hall_id }}">{{ res.hall }}</option>
+                        {% for hall in halls %}
+                        <option value="{{ hall.id }}">{{ hall }}</option>
+                        {% endfor %}
+
+
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Date (yyyy-mm-dd): </td><td><input type="date" name="date" value="{{ res.date|date:"Y-m-d" }}">
+            </td>
+
+            </tr>
+            <tr>
+                <td>Description:</td><td><textarea type="text" name="description" value=""{{ res.description }}</textarea></td>
+
+            </tr>
+                <tr><td style="background-color: gainsboro"><input type="submit" value="Submit"</td><td style="background-color: gainsboro"</td></tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+{% endblock %}
