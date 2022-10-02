@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block add_hall %}
+    <table class="table table-striped">
+        <h3> Add a new conference hall:</h3><br>
+        <form id="submit_area" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Name:</td><td>{{ form.name }}</td>
+            </tr>
+            <tr>
+                <td>Capacity:</td><td>{{ form.capacity }}</td>
+            </tr>
+            <tr>
+                <td>Projector:</td><td>{{ form.projector }}</td>
+
+            </tr>
+            <tr><td style="background-color: gainsboro"><input type="submit" value="Submit"></td><td style="background-color: gainsboro"></td>
+            </tr>
+        </form>
+    </table>
+    {% if message %}
+    <h4 style="color: #ba2121">{{ message }}</h4>
+    {% endif %}
+{% endblock %}

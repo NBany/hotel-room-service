@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block show_halls_details %}
+    <h5 style="color: #ba2121">{% if message %}{{ message }}{% endif %}</h5>
+    <form id="submit_area" method="POST">
+        {% csrf_token %}
+    <label>Sort by capacity:
+    <button type="submit" name="sort" value="2">from highest</button>
+    <button type="submit" name="sort" value="1">from lowest</button>
+    <button type="submit" name="sort" value="0">default</button><br>
+    </label>
+    </form>
+    <h4>Details of our halls:</h4>
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Capacity</th>
+            <th>Projector</th>
+            <th>Reservations</th>
+        </thead>
+        {% for hall in halls %}
+        <tr>
+            <td><a href="/room/{{ hall.id }}" style="color: #003366">{{ hall.name }}</a><br>
+            <small class="text-muted"><a href="/room/modify/{{ hall.id }}">edit</a></small>
+            <small class="text-muted"><a href="/room/delete/{{ hall.id }}">delete</a></small>
+            <small class="text-muted"><a href="/room/reserve/{{ hall.id }}">reserve</a></small>
+            </td>
+            <td>{{ hall.capacity }}</td>
+            <td>{{ hall.projector }}</td>
+            <td>{% for r in reservations %}{% if r.hall == hall %}{{ r.date }} : {{r.description }}<br>{% endif %}{% endfor %}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+    <h5><a href="{% url 'add_hall' %}">Add new hall</a></h5>
+
+{% endblock %}

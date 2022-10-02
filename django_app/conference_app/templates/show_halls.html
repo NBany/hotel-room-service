@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block show_halls %}
+    <h6 style="color: #ba2121">{% if message %}{{ message }}{% endif %}</h6>
+    <h6 style="color: #ba2121">Last action: {% if request.session.message %}{{ request.session.message }}{% endif %}</h6>
+    <h3>Conference halls:</h3>
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Status for today</th>
+        </thead>
+        {% for hall in halls %}
+        <tr>
+            <td><a href="/room/{{ hall.id }}" style="color: #003366">{{ hall }}</a>
+                <br><small class="text-muted"><a href="/room/modify/{{ hall.id }}">edit</a></small>
+                <small class="text-muted"><a href="/room/delete/{{ hall.id }}">delete</a></small></td></small>
+            </td>
+            <td>{% load dictionairy_keys %}{{ status|dictionairy_keys:hall.id }}</td>
+
+        </tr>
+            {% endfor %}
+    </table><br>
+    <h5><a href="{% url 'add_hall' %}"</a></h5>
+{% endlock %}
